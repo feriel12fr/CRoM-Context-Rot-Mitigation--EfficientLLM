@@ -21,8 +21,12 @@ TOKENS_SAVED = Gauge("crom_tokens_saved", "Tokens saved by budget packer")
 DRIFT_ALERTS = Counter("crom_drift_alerts_total", "Total drift alerts emitted")
 
 class DummyEmbed:
-    def encode(self, text, convert_to_numpy=False):
-        vec = [ord(c) % 7 for c in str(text)[:16]]
+    def encode(self, text_or_list, convert_to_numpy=False):
+        if isinstance(text_or_list, list):
+            return [self.encode(t) for t in text_or_list]
+        vec = [ord(c) % 7 for c in str(text_or_list)[:16]]
+        while len(vec) < 16:
+            vec.append(0)
         return vec
 
 def run_demo() -> None:
@@ -33,17 +37,17 @@ def run_demo() -> None:
     ]
     packed = budget_pack(chunks, budget=80)
     summary = pack_summary(packed)
-    print("📦 Packed:", [c.text for c in packed], summary)
+    print("Packed:", [c.text for c in packed], summary)
 
     docs = [{"text": "AI drift measurement"}, {"text": "Cooking recipes"}]
     reranked = hybrid_rerank("AI ethics", docs, DummyEmbed(), alpha=0.5)
-    print("🔎 Reranked:", [d["text"] for d in reranked])
+    print("Reranked:", [d["text"] for d in reranked])
 
     de = DriftEstimator(threshold=0.5, mode=DriftMode.L2)
-    print("⚙️ Drift state:", de.state())
-    print("⚠️ Drift alert?", de.update([1, 2, 3]))
-    print("⚠️ Drift alert?", de.update([10, 10, 10]))
-    print("⚙️ Drift state:", de.state())
+    print("Drift state:", de.state())
+    print("Drift alert?", de.update([1, 2, 3]))
+    print("Drift alert?", de.update([10, 10, 10]))
+    print("Drift state:", de.state())
 
     # Update metrics
     TOKENS_SAVED.set(max(0, sum(c.tokens for c in chunks) - summary["tokens"]))
