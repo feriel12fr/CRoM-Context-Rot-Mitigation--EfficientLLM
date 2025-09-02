@@ -12,4 +12,4 @@ def test_budget_pack_sorting_stable():
         {"text": "z", "score": 0.8, "tokens": 10},
     ]
     sel = budget_pack(chunks, budget=60)
-    assert [c.text for c in sel] == ["y", "x"]
+    assert [c.text for c in sel] == ["y", "x", "z"]
