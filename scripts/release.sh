@@ -27,10 +27,7 @@ else
 fi
 
 # tag & push
-read -p "Tag ${TAG} and push? (y/N) " yn
-if [[ "$yn" != "y" && "$yn" != "Y" ]]; then
-  echo "aborted"; exit 1
-fi
+
 
 git tag -a "$TAG" -m "Release $TAG"
 git push origin "$TAG"
