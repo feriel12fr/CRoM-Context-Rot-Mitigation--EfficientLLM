@@ -1,3 +1,18 @@
+---
+language: en
+license: apache-2.0
+library_name: crom-efficientllm
+tags:
+- rag
+- llm
+- retrieval
+- rerank
+- reranker
+- context-management
+- prompt-engineering
+- observability
+- python
+---
 # CRoM-Context-Rot-Mitigation--EfficientLLM: Context Reranking and Management for Efficient LLMs
 
 <p align="left">
@@ -21,7 +36,7 @@
   </a>
 </p>
 
-**CRoM (Context Rot Mitigation)-EfficientLLM** is a Python toolkit designed to optimize the context provided to Large Language Models (LLMs). It provides a suite of tools to intelligently select, re-rank, and manage text chunks to fit within a model's context budget while maximizing relevance and minimizing performance drift.
+**CRoM (Context Rot Mitigation)-EfficientLLM** is a Python toolkit designed to optimize the context provided to Large Language Models (LLMs). It provides a suite of tools to intelligently select, re-rank, and manage text chunks to fit within a model\'s context budget while maximizing relevance and minimizing performance drift.
 
 This project is ideal for developers building RAG (Retrieval-Augmented Generation) pipelines who need to make the most of limited context windows.
 
@@ -36,7 +51,7 @@ This project is ideal for developers building RAG (Retrieval-Augmented Generatio
 
 ## Installation
 
-Install the package directly from source using pip. For development, it's recommended to install in editable mode with the `[dev]` extras.
+Install the package directly from source using pip. For development, it\'s recommended to install in editable mode with the `[dev]` extras.
 
 ```bash
 # Clone the repository
