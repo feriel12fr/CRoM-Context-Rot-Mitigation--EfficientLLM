@@ -1,8 +1,8 @@
-# CRoM-EfficientLLM: Context Reranking and Management for Efficient LLMs
+# CRoM-Context-Rot-Mitigation--EfficientLLM: Context Reranking and Management for Efficient LLMs
 
 <p align="left">
-  <a href="https://github.com/Flamehaven/CRoM-EfficientLLM/actions">
-    <img alt="CI" src="https://img.shields.io/github/actions/workflow/status/Flamehaven/CRoM-EfficientLLM/ci.yml?branch=main" />
+  <a href="https://github.com/Flamehaven/CRoM-Context-Rot-Mitigation--EfficientLLM/actions">
+    <img alt="CI" src="https://img.shields.io/github/actions/workflow/status/Flamehaven/CRoM-Context-Rot-Mitigation--EfficientLLM/ci.yml?branch=main" />
   </a>
   <a href="#-benchmarks">
     <img alt="Bench" src="https://img.shields.io/badge/benchmarks-ready-success" />
@@ -10,13 +10,13 @@
   <a href="LICENSE">
     <img alt="License" src="https://img.shields.io/badge/license-Apache%202.0-blue" />
   </a>
-  <a href="https://github.com/Flamehaven/CRoM-EfficientLLM/releases">
-    <img alt="Release" src="https://img.shields.io/github/v/release/Flamehaven/CRoM-EfficientLLM?display_name=tag" />
+  <a href="https://github.com/Flamehaven/CRoM-Context-Rot-Mitigation--EfficientLLM/releases">
+    <img alt="Release" src="https://img.shields.io/github/v/release/Flamehaven/CRoM-Context-Rot-Mitigation--EfficientLLM?display_name=tag" />
   </a>
   <a href="CHANGELOG.md">
     <img alt="Versioning" src="https://img.shields.io/badge/semver-0.2.x-lightgrey" />
   </a>
-  <a href="https://github.com/Flamehaven/CRoM-EfficientLLM/releases/latest">
+  <a href="https://github.com/Flamehaven/CRoM-Context-Rot-Mitigation--EfficientLLM/releases/latest">
     <img alt="Wheel" src="https://img.shields.io/badge/wheel-available-success" />
   </a>
 </p>
@@ -40,8 +40,8 @@ Install the package directly from source using pip. For development, it's recomm
 
 ```bash
 # Clone the repository
-git clone https://github.com/Flamehaven/CRoM-EfficientLLM.git
-cd CRoM-EfficientLLM
+git clone https://github.com/Flamehaven/CRoM-Context-Rot-Mitigation--EfficientLLM.git
+cd CRoM-Context-Rot-Mitigation--EfficientLLM
 
 # Install in editable mode with development and plugin dependencies
 pip install -e .[dev,plugins]

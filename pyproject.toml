@@ -37,7 +37,7 @@ haystack = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Flamehaven/CRoM-EfficientLLM"
+Homepage = "https://github.com/Flamehaven/CRoM-Context-Rot-Mitigation--EfficientLLM"
 
 [project.scripts]
 "crom-demo" = "crom_efficientllm.demo:main"
