@@ -12,12 +12,12 @@ if [[ -n $(git status --porcelain) ]]; then
 fi
 
 # ensure deps
-py -m pip install -e .[dev]
+python -m pip install -e .[dev]
 pre-commit run --all-files
 pytest -q
 
 # generate release notes preview from CHANGELOG
-py scripts/gen_release_notes.py "$TAG"
+python scripts/gen_release_notes.py "$TAG"
 if [[ -f release_notes.md ]]; then
   echo "--- release_notes.md (preview top 60 lines) ---"
   head -n 60 release_notes.md || true
